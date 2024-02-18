@@ -9,5 +9,13 @@ public class GenericUtils {
         }
     }
 
-
+    public static<T extends Number> double sum(T[] items) {
+        double sum = 0;
+        for (int i = 0; i< items.length; i++) {
+            if(items[i] != null) {
+                sum+=(double)items[i];
+            }
+        }
+        return sum;
+    }
 }
