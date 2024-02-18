@@ -29,4 +29,11 @@ public class MyStack<T extends Number>  {
         return item;
     }
 
+    public String list() {
+        String text = "";
+        for (int i = stack.length; i > 0;i--) {
+            text = new StringBuilder().append(stack[i-1]).append(";").toString();
+        }
+        return text;
+    }
 }
