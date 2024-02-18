@@ -28,6 +28,7 @@ public class MyStack<T> {
     /**
      * Pushes an element onto the top of this stack.
      * @param item The item to be pushed onto this stack.
+     * @throws StackFullException if the stack is full.
      */
     public void push(T item) throws StackFullException {
         /*if (stack[stack.length - 1] != null) {
@@ -48,6 +49,7 @@ public class MyStack<T> {
     /**
      * Removes the element at the top of this stack and returns it.
      * @return The element at the top of this stack.
+     * @throws StackEmptyException if the stack is empty.
      */
     public T pop() throws StackEmptyException {
         /*T item = peek();
@@ -68,6 +70,7 @@ public class MyStack<T> {
     /**
      * Returns the element at the top of this stack without removing it.
      * @return The element at the top of this stack.
+     * @throws StackEmptyException if the stack is empty.
      */
     public T peek() throws StackEmptyException{
         if(index > 0)
@@ -86,23 +89,5 @@ public class MyStack<T> {
             text.append(stack[i - 1]).append(";");
         }
         return text.toString();
-    }
-
-    /**
-     * A test method to demonstrate the functionality of MyStack.
-     * @param args Command-line arguments.
-     */
-    public static void main(String[] args) throws StackFullException, StackEmptyException {
-        var numberStack = new MyStack<String>();
-        System.out.println("//peek\n" + numberStack.peek() + " == null");
-        numberStack.push("1");
-        numberStack.push("2");
-        numberStack.push("3");
-        System.out.println(numberStack.list());
-        System.out.println("//peek\n" + numberStack.peek() + " == 3");
-        numberStack.pop();
-        System.out.println("//pop + peek\n" + numberStack.peek() + " == 2");
-        numberStack.pop();
-        System.out.println("//pop + peek\n" + numberStack.peek() + " == 1");
     }
 }
