@@ -12,4 +12,21 @@ public class MyStack<T extends Number>  {
     public MyStack() {
         this(1);
     }
+
+    public void push(T item) {
+        T[] newStack = Arrays.copyOf(stack, stack.length+1);
+        newStack[stack.length] = item;
+        stack=newStack;
+    }
+    public T pop() {
+        T item = peek();
+        T[] newStack = Arrays.copyOf(stack, stack.length-1);
+        stack=newStack;
+        return item;
+    }
+    public T peek() {
+        T item = stack[stack.length-1];
+        return item;
+    }
+
 }
