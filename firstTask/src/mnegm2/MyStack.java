@@ -11,10 +11,19 @@ public class MyStack<T> {
 
     /**
      * Constructs a new MyStack instance with the specified initial length.
+     * @param stack Object
+     */
+    public MyStack(T[] stack) {
+        this.stack = stack;
+        index = 0;
+    }
+
+    /**
+     * Constructs a new MyStack instance with the specified initial length.
      * @param length The initial length of the stack.
      */
     public MyStack(int length) {
-        this.stack = (T[]) new Object[length];
+        this.stack = (T[]) new Object[3];
         index = 0;
     }
 
@@ -42,7 +51,6 @@ public class MyStack<T> {
             throw new StackFullException();
         } else {
             stack[index++] = item;
-            //index++;
         }
     }
 

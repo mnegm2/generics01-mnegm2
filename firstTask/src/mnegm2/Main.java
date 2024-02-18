@@ -8,11 +8,11 @@ public class Main {
      * @throws StackEmptyException if the stack is empty.
      */
     public static void main(String[] args) throws StackFullException, StackEmptyException {
-        var numberStack = new MyStack<String>();
+        var numberStack = new MyStack<Integer>();
         System.out.println("//peek\n" + numberStack.peek() + " == null");
-        numberStack.push("1");
-        numberStack.push("2");
-        numberStack.push("3");
+        numberStack.push(1);
+        numberStack.push(2);
+        numberStack.push(3);
         System.out.println(numberStack.list());
         System.out.println("//peek\n" + numberStack.peek() + " == 3");
         numberStack.pop();
